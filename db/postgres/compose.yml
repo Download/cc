@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:14.2
+    # platform: linux/x86_64
+    ports: 
+      - ${DB_PORT:-5432}:${DB_PORT:-5432}
+    environment:
+      - POSTGRES_DB=${DB_NAME:-db}
+      - POSTGRES_USER=${DB_USER:-system}
+      - POSTGRES_PASSWORD=${DB_PASS:-secret}

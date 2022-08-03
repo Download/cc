@@ -1,0 +1,26 @@
+services:
+  db:
+    image: mariadb:10.7.3
+#     platform: linux/x86_64
+    ports: 
+      - ${DB_PORT:-3306}:${DB_PORT:-3306}
+    environment:
+      - MYSQL_HOST=${DB_HOST:-localhost}
+      - MYSQL_DATABASE=${DB_NAME:-db}
+      - MYSQL_USER=${DB_USER:-system}
+      - MYSQL_PASSWORD=${DB_PASS:-secret}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT:-topsecret}
+    command:
+      # disable deprecated default values for timestamps
+      # - --explicit_defaults_for_timestamp=1
+      # use recent tls version, prevent warning about deprecated older versions
+      - --tls_version=TLSv1.2
+      # prevent warning about native aio not being available (on e.g. mac)
+      # - --innodb_use_native_aio=0
+      # make sure we use real utf8, not mysql broken utf8, or worse, latin1
+      # defaults to latin1. recipe for disaster, so change
+      - --character-set-server=utf8mb4
+      # defaults to latin1_swedish_ci. *facepalm*! change to something sane.
+      - --collation-server=utf8mb4_unicode_ci
+      # yes, we really do want to use unicode in 2022....
+      # - --init_connect="SET NAMES utf8mb4"

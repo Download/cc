@@ -1,0 +1,27 @@
+{
+  "name": "cc",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "browser": "client.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/download/cc.git"
+  },
+  "author": "Stijn de Witt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/download/cc/issues"
+  },
+  "homepage": "https://github.com/download/cc#readme",
+  "scripts": {
+    "dev": "npm install && node proxy/setup.js && node server"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "compression": "^1.7.4",
+    "esbuild": "^0.14.51"
+  }
+}

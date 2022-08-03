@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Mac folder metadata files
+.DS_Store
+
+# SSL certificates
+proxy/certs/
+
+# temp files
+temp/

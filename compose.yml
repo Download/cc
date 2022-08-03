@@ -1,0 +1,35 @@
+services:
+  web:
+    env_file: .env
+    image: node:18
+    user: "node"
+    working_dir: /home/node/web
+    volumes_from:
+      - proxy:rw
+    volumes:
+      - ./:/home/node/web
+    expose:
+      - "3000"
+    networks:
+      - proxy
+    command: npm run dev
+    environment:
+      VIRTUAL_HOST: ${NAME?Copy example.env to .env and fill in your project name.}.localhost
+
+  db:
+    env_file: .env
+    extends:
+      file: db/${DB_TYPE:-mariadb}/compose.yml
+      service: db
+
+  proxy:
+    env_file: .env
+    extends:
+      file: proxy/compose.yml
+      service: proxy
+
+networks:
+  proxy: 
+
+volumes:
+  db:

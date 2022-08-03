@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!--app-title--></title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      body > header {
+        height: 32vw;
+        background: linear-gradient(#106390 0 20vw, #569900 20vw 24vw);
+        text-align: center;
+        position: relative;
+      }
+
+      body > header > section:first-of-type {
+        position: sticky;
+        top: 0;
+        height: 12vw;
+      }
+
+      body > header > section:first-of-type > img {
+        width: 24vw;
+        margin-top: 4vw;
+      }
+
+      body > header > section:nth-of-type(2) {
+        height: 20vw;
+        transform: translateZ(1px);
+        background: url(land-clipped.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+      }
+
+      body > header > section:nth-of-type(2)::before {
+        content: "";
+        display: block;
+        height: 24vw;
+        background: linear-gradient(transparent 0 20vw, #569900 20vw 24vw);
+      }
+
+      body > main {
+        background-color: #569900;
+        padding: 2em 0 0 0;
+      }
+
+      /* 
+      body > header > div {
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        width: 100vw;
+        height: 350px;
+        margin: 0;
+        border: 1px solid red;
+        background-image: url(/land-clipped.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: top;
+      }
+
+      body > header > div::after {
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        width: 100vw;
+        height: 190px;
+        margin: 0;
+        border: 1px solid pink;
+      }
+
+
+      body > main > div {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+      }
+*/
+
+      body > main > div > article {
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: top;
+        width: 360px;
+        height: 400px;
+        padding: 2em;
+        margin: 0 20px 0 20px;
+        background: white;
+        color: black;
+        text-align: center;
+      }
+
+      body > main > div > article > .material-icons {
+        font-size: 192px;
+        line-height: 192px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <section>
+        <img src="logo.png">
+      </section>
+      <section>
+        <nav>
+          <label>          
+            <span class="material-icons">menu</span>
+          </label>
+        </nav>
+      </section>
+    </header>
+    <main>
+      <div>
+        <article>
+          <span class="material-icons">public</span>
+          <h1>Coupons for the world!</h1>
+          <ul>
+            <li>Spend</li>
+            <li>Accept</li>
+            <li>Buy</li>
+            <li>Sell</li>
+          </ul>
+        </article><article>
+          <span class="material-icons">public</span>
+          <h1>Coupons for the world!</h1>
+          <ul>
+            <li>Spend</li>
+            <li>Accept</li>
+            <li>Buy</li>
+            <li>Sell</li>
+          </ul>
+        </article><article>
+          <span class="material-icons">person</span>
+          <h1>Register</h1>
+          <ul>
+            <li>Your own wallet</li>
+            <li>Free of charge</li>
+          </ul>
+        </article>
+      </div>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!--app-html-->
+
+    </main>
+    <footer></footer>
+  </body>
+</html>
